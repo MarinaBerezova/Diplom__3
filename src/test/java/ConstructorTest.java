@@ -17,25 +17,45 @@ public class ConstructorTest extends BaseUrl {
     public void setUp() {
         driver = getDriver();
         generator = new TestDataGenerator();
-        driver.get(testInstance);
-        driver.manage().deleteAllCookies();
     }
 
     @Test
-    @DisplayName("Check 'Buns', 'Sauces' and 'Fillings' tab selection")
+    @DisplayName("Check 'Sauces' tab selection")
     @Description("Check that user can navigate through the list of ingredients using tab selection")
-    public void checkTabSelection() {
+    public void checkSaucesTabSelection() {
         driver.get(testInstance);
         ConstructorPageStellarBurgers objConstructorPage = new ConstructorPageStellarBurgers(driver);
         objConstructorPage.waitConstructorPageLoads();
         Assert.assertEquals("Булки", objConstructorPage.getTextFromCurrentTab());
         objConstructorPage.clickSaucesTab();
+        objConstructorPage.waitConstructorPageLoads();
         Assert.assertEquals("Соусы", objConstructorPage.getTextFromCurrentTab());
+    }
+
+    @Test
+    @DisplayName("Check 'Fillings' tab selection")
+    @Description("Check that user can navigate through the list of ingredients using tab selection")
+    public void checkFillingsTabSelection() {
+        driver.get(testInstance);
+        ConstructorPageStellarBurgers objConstructorPage = new ConstructorPageStellarBurgers(driver);
         objConstructorPage.waitConstructorPageLoads();
+        Assert.assertEquals("Булки", objConstructorPage.getTextFromCurrentTab());
         objConstructorPage.clickFillingsTab();
-        Assert.assertEquals("Начинки", objConstructorPage.getTextFromCurrentTab());
         objConstructorPage.waitConstructorPageLoads();
+        Assert.assertEquals("Начинки", objConstructorPage.getTextFromCurrentTab());
+    }
+
+    @Test
+    @DisplayName("Check 'Buns' tab selection")
+    @Description("Check that user can navigate through the list of ingredients using tab selection")
+    public void checkBunsTabSelection() {
+        driver.get(testInstance);
+        ConstructorPageStellarBurgers objConstructorPage = new ConstructorPageStellarBurgers(driver);
+        objConstructorPage.waitConstructorPageLoads();
+        Assert.assertEquals("Булки", objConstructorPage.getTextFromCurrentTab());
+        objConstructorPage.clickSaucesTab();
         objConstructorPage.clickBunsTab();
+        objConstructorPage.waitConstructorPageLoads();
         Assert.assertEquals("Булки", objConstructorPage.getTextFromCurrentTab());
     }
 

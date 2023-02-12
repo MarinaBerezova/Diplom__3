@@ -7,9 +7,9 @@ public class RegistrationPage {
 
     private WebDriver driver;
 
-    private By nameInput = By.xpath(".//form[starts-with(@class,'Auth_form')]//fieldset[1]//input");
+    private By nameInput = By.xpath(".//form[starts-with(@class,'Auth_form')]//*[text()='Имя']/following::input");
 
-    private By emailInput = By.xpath(".//form[starts-with(@class,'Auth_form')]//fieldset[2]//input");
+    private By emailInput = By.xpath(".//form[starts-with(@class,'Auth_form')]//*[text()='Email']/following::input");
 
     private By passwordInput = By.xpath(".//input[@name='Пароль']");
 

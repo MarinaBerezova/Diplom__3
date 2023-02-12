@@ -9,7 +9,7 @@ public class LoginPage {
 
     private WebDriver driver;
 
-    private By emailInput = By.xpath(".//form[starts-with(@class,'Auth_form')]//fieldset[1]//input");
+    private By emailInput = By.xpath(".//form[starts-with(@class,'Auth_form')]//*[text()='Email']/following::input");
 
     private By passwordInput = By.xpath(".//input[@name='Пароль']");
 

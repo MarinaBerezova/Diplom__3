@@ -7,7 +7,7 @@ public class ForgotPasswordPage {
 
     private WebDriver driver;
 
-    private By emailInput = By.xpath(".//form[starts-with(@class,'Auth_form')]//fieldset[1]//input");
+    private By emailInput = By.xpath(".//form[starts-with(@class,'Auth_form')]//*[text()='Email']/following::input");
 
     private By submitButton = By.xpath(".//button[text()='Восстановить']");
 

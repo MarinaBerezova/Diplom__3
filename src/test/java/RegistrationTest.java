@@ -38,8 +38,6 @@ public class RegistrationTest extends BaseUrl{
     public void setUp(){
         driver = getDriver();
         generator = new TestDataGenerator();
-        driver.get(testInstance);
-        driver.manage().deleteAllCookies();
     }
 
     @Test
